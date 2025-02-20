@@ -29,6 +29,18 @@ defineProps({
         <th>Gender</th>
         <td>{{ character.gender }}</td>
       </tr>
+      <tr>
+        <th>Eye color</th>
+        <td>{{ character.eye_color }}</td>
+      </tr>
+      <tr>
+        <th>Hair color</th>
+        <td>{{ character.hair_color }}</td>
+      </tr>
+      <tr>
+        <th>Skin color</th>
+        <td>{{ character.skin_color }}</td>
+      </tr>
     </tbody>
   </table>
 </template>
