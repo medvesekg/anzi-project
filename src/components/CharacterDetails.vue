@@ -19,7 +19,7 @@ defineProps({
       </tr>
       <tr>
         <th>Mass</th>
-        <td>100 kg</td>
+        <td>{{ character.mass }} kg</td>
       </tr>
       <tr>
         <th>Birth year</th>
