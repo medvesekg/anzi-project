@@ -3,6 +3,8 @@ import CharactersListPage from "@/pages/CharactersListPage.vue";
 import CharacterDetailsPage from "@/pages/CharacterDetailsPage.vue";
 import PlanetsListPage from "@/pages/PlanetsListPage.vue";
 import PlanetDetailsPage from "@/pages/PlanetDetailsPage.vue";
+import HomePage from "@/pages/HomePage.vue";
+import ShipsListPage from "@/pages/ShipsListPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,6 +12,11 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
+      component: HomePage,
+    },
+    {
+      path: "/characters",
+      name: "character-list",
       component: CharactersListPage,
     },
     {
@@ -27,6 +34,18 @@ const router = createRouter({
       name: "planet-details",
       component: PlanetDetailsPage,
     },
+    /*
+    {
+      path: "/ships",
+      name: "ships-list",
+      component: ShipsListPage,
+    },
+    {
+      path: "/ships/:id",
+      name: "ships-details",
+      component: ShipsDetailsPge,
+    },
+    */
   ],
 });
 
