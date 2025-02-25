@@ -32,7 +32,7 @@
         <img src="/img/StarWarsSpaceShips.jpg" alt="Space ships" />
         <!-- <img :src="require('@/img/StarWarsSpaceShips.jpg')" alt="Space ships" /> -->
         <h2>Ships</h2>
-        <RouterLink to="/ships">
+        <RouterLink to="/starships">
           <button>explore the galaxy</button>
         </RouterLink>
       </div>

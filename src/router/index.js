@@ -4,7 +4,11 @@ import CharacterDetailsPage from "@/pages/CharacterDetailsPage.vue";
 import PlanetsListPage from "@/pages/PlanetsListPage.vue";
 import PlanetDetailsPage from "@/pages/PlanetDetailsPage.vue";
 import HomePage from "@/pages/HomePage.vue";
-import ShipsListPage from "@/pages/ShipsListPage.vue";
+import ShipsListPage from "@/pages/StarshipsListPage.vue";
+import StarshipDetails from "@/components/StarshipDetails.vue";
+import ShipDetailsPage from "@/pages/StarshipDetailsPage.vue";
+import StarshipsListPage from "@/pages/StarshipsListPage.vue";
+import StarshipDetailsPage from "@/pages/StarshipDetailsPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,18 +38,17 @@ const router = createRouter({
       name: "planet-details",
       component: PlanetDetailsPage,
     },
-    /*
+
     {
-      path: "/ships",
+      path: "/starships",
       name: "ships-list",
-      component: ShipsListPage,
+      component: StarshipsListPage,
     },
     {
-      path: "/ships/:id",
-      name: "ships-details",
-      component: ShipsDetailsPge,
+      path: "/starships/:id",
+      name: "starship-details",
+      component: StarshipDetailsPage,
     },
-    */
   ],
 });
 
