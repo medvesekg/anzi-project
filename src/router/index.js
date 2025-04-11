@@ -43,7 +43,7 @@ const router = createRouter({
     {
       path: "/ships/:id",
       name: "ships-details",
-      component: ShipsDetailsPge,
+      component: ShipsDetailsPage,
     },
     */
   ],

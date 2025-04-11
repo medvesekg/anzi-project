@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { Card, Button } from "primevue";
+</script>
 <template>
   <div class="home">
     <div class="title">
@@ -8,34 +10,98 @@
       <p>Hello there!</p>
     </div>
     <div class="categories">
-      <div class="category-card">
-        <img
-          src="/img/StarWarsCharacters.jpg"
-          alt="Heroes, villains and other characters"
-        />
-        <h2>Characters</h2>
-        <RouterLink to="/characters">
-          <button>explore the galaxy</button>
-        </RouterLink>
-      </div>
-      <div class="category-card">
-        <img
-          src="/img/StarWarsPlanets.jpg"
-          alt="Planets in Star Wars galaxies"
-        />
-        <h2>Planets</h2>
-        <RouterLink to="/planets">
-          <button>explore the galaxy</button>
-        </RouterLink>
-      </div>
-      <div class="category-card">
-        <img src="/img/StarWarsSpaceShips.jpg" alt="Space ships" />
-        <!-- <img :src="require('@/img/StarWarsSpaceShips.jpg')" alt="Space ships" /> -->
-        <h2>Ships</h2>
-        <RouterLink to="/ships">
-          <button>explore the galaxy</button>
-        </RouterLink>
-      </div>
+      <Card
+        class="category-card transition-transform hover:scale-105 shadow-2xl"
+        style="width: 25rem; overflow: hidden"
+      >
+        <template #header>
+          <img
+            alt="Characters"
+            src="/img/StarWarsCharacters.jpg"
+            class="w-full h-60 object-cover"
+          />
+        </template>
+        <template #title>Characters</template>
+        <template #content>
+          <p class="m-0 mt-3">
+            By clicking on the explore button on this card you can explore
+            characters in the Star Wars universe
+          </p>
+        </template>
+        <template #footer>
+          <RouterLink to="/characters" class="w-full">
+            <Button
+              label="Explore"
+              icon="pi pi-users"
+              severity="primary"
+              outlined
+              class="w-full"
+            />
+          </RouterLink>
+        </template>
+      </Card>
+
+      <Card
+        class="category-card transition-transform hover:scale-105 shadow-2xl"
+        style="width: 25rem; overflow: hidden"
+      >
+        <template #header>
+          <img
+            alt="Ships"
+            src="/img/StarWarsSpaceShips.jpg"
+            class="w-full h-60 object-cover"
+          />
+        </template>
+        <template #title>Ships</template>
+        <template #content>
+          <p class="m-0 mt-3">
+            By clicking on the explore button on this card you can explore ships
+            in the Star Wars universe
+          </p>
+        </template>
+        <template #footer>
+          <RouterLink to="/ships" class="w-full">
+            <Button
+              label="Explore"
+              icon="pi pi-send"
+              severity="primary"
+              outlined
+              class="w-full"
+            />
+          </RouterLink>
+        </template>
+      </Card>
+
+      <Card
+        class="category-card transition-transform hover:scale-105 shadow-2xl"
+        style="width: 25rem; overflow: hidden"
+      >
+        <template #header>
+          <img
+            alt="Planets"
+            src="/img/StarWarsPlanets.jpg"
+            class="w-full h-60 object-cover"
+          />
+        </template>
+        <template #title>Planets</template>
+        <template #content>
+          <p class="m-0 mt-3">
+            By clicking on the explore button on this card you can explore
+            planets in the Star Wars universe
+          </p>
+        </template>
+        <template #footer>
+          <RouterLink to="/planets" class="w-full">
+            <Button
+              label="Explore"
+              icon="pi pi-globe"
+              severity="primary"
+              outlined
+              class="w-full"
+            />
+          </RouterLink>
+        </template>
+      </Card>
     </div>
   </div>
 </template>
@@ -69,39 +135,7 @@ p {
   flex-wrap: wrap;
   max-width: 100%;
 }
-.category-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  width: 95%;
-  max-width: 400px;
-  min-width: 280px;
-  width: 30%;
-  padding: 10px;
-  /*cursor: pointer;*/
-  border: 1px solid #ccc;
-  border-radius: 20px;
-}
-.category-card img {
-  border: 2px black solid;
-  border-radius: 40%;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 15px;
-}
-button {
-  cursor: pointer;
-  border: 3px solid black;
-  padding: 10px;
-  margin-top: 30px;
-  border-radius: 30px;
-}
-button:hover {
-  color: black;
-  background-color: gold;
-  transition-duration: 1s;
-}
+
 @media (max-width: 768px) {
   .categories {
     flex-direction: column;

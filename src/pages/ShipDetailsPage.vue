@@ -1,2 +1,2 @@
 <script setup></script>
-<template></template>
+<template><p>Hello there, under construction</p></template>
