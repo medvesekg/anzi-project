@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools(), tailwindcss()],
-  base: process.env === "production" ? "/anzi-project/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/anzi-project/" : "/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
