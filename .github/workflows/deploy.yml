@@ -29,7 +29,7 @@ jobs:
           pnpm install
       - name: Build app
         run: |
-          pnpm build --outDir=.site
+          pnpm build --outDir=_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
