@@ -6,7 +6,7 @@ on:
     branches:
       - master
 
-  # Add ability to manually trigger
+  # Add ability to manually  trigger
   workflow_dispatch:
 
 # Permissions needed to deploy to github pages
