@@ -28,7 +28,7 @@ function loadCharacter(id) {
     <div v-if="loading">Loading...</div>
     <div v-else>
       <h1 class="text-center text-4xl font-thin mt-5 mb-10 relative">
-        <RouterLink to="/">
+        <RouterLink to="/characters">
           <span class="pi pi-arrow-left back-button"></span>
         </RouterLink>
         {{ character.name }}
