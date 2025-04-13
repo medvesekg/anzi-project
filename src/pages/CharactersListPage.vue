@@ -67,4 +67,9 @@ function extractId(url) {
       </Column>
     </DataTable>
   </DefaultLayout>
+  <RouterLink to="/">
+    <div class="flex justify-center items-center m-10">
+      <span class="pi pi-arrow-left back-button"></span>
+    </div>
+  </RouterLink>
 </template>

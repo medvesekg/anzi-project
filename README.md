@@ -1,5 +1,7 @@
 # Anzi project
 
+https://medvesekg.github.io/anzi-project/
+
 This is a simple Vue 3 frontend that shows data from the Star Wars API (https://swapi.dev/)
 
 ![Screenshot](./img/screenshot.png "Screenshot")
