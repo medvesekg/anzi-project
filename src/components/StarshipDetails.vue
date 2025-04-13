@@ -35,23 +35,31 @@ const formatNumber = (num) => {
       </tr>
       <tr>
         <th>Cost</th>
-        <td>{{ formatNumber(starship.cost_in_credits) }} CRED</td>
+        <!-- I used formatNumber(), because the number looks better seperated with commas. If it's N/A or unknown it leaves it as it is-->
+        <td>
+          <span v-if="isNaN(Number(starship.cost_in_credits))">
+            {{ starship.cost_in_credits }}
+          </span>
+          <span v-else>
+            {{ formatNumber(starship.cost_in_credits) }} CRED
+          </span>
+        </td>
       </tr>
       <tr>
         <th>Length</th>
-        <td>{{ formatNumber(starship.length) }} m</td>
+        <td>{{ starship.length }} m</td>
       </tr>
       <tr>
         <th>Crew</th>
-        <td>{{ formatNumber(starship.crew) }}</td>
+        <td>{{ starship.crew }}</td>
       </tr>
       <tr>
         <th>Passengers</th>
-        <td>{{ formatNumber(starship.passengers) }}</td>
+        <td>{{ starship.passengers }}</td>
       </tr>
       <tr>
         <th>Cargo capacity</th>
-        <td>{{ formatNumber(starship.cargo_capacity) }} kg</td>
+        <td>{{ starship.cargo_capacity }} kg</td>
       </tr>
     </tbody>
   </table>
