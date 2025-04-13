@@ -60,7 +60,7 @@ import { Card, Button } from "primevue";
           </p>
         </template>
         <template #footer>
-          <RouterLink to="/ships" class="w-full">
+          <RouterLink to="/starships" class="w-full">
             <Button
               label="Explore"
               icon="pi pi-send"

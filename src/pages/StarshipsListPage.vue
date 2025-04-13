@@ -1,24 +1,22 @@
 <script setup>
+import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import axios from "axios";
 import { ref, watch } from "vue";
 import { Column, DataTable } from "primevue";
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
 
-const characters = ref([]);
+const starships = ref([]);
 const total = ref(0);
 const loading = ref(false);
 const page = ref(1);
 
-watch(page, loadCharacters, {
-  immediate: true,
-});
+watch(page, loadShips, { immediate: true });
 
-function loadCharacters(page) {
+function loadShips(page) {
   loading.value = true;
   axios
-    .get(`https://swapi.dev/api/people?page=${page}`)
+    .get(`https://swapi.dev/api/starships/?page=${page}`)
     .then((response) => {
-      characters.value = response?.data?.results || [];
+      starships.value = response?.data?.results || [];
       total.value = response?.data?.count || 0;
     })
     .finally(() => {
@@ -40,9 +38,9 @@ function extractId(url) {
 
 <template>
   <DefaultLayout>
-    <h1 class="text-center text-4xl font-thin mt-5 mb-10">Characters</h1>
+    <h1 class="text-center text-4xl font-thin mt-5 mb-10">Starships</h1>
     <DataTable
-      :value="characters"
+      :value="starships"
       :loading="loading"
       :paginator="true"
       :total-records="total"
@@ -50,21 +48,17 @@ function extractId(url) {
       :lazy="true"
       @page="onPageChange"
     >
-      <Column field="name" header="Name">
-        <template #body="{ data }">
+      <Column field="name" header="Name"
+        ><template #body="{ data }">
           <RouterLink
-            :to="`/characters/${extractId(data.url)}`"
             class="text-blue-600 underline"
-            >{{ data.name }}</RouterLink
-          >
+            :to="`/starships/${extractId(data.url)}`"
+            >{{ data.name }}
+          </RouterLink>
         </template>
       </Column>
-      <Column field="height" header="Height">
-        <template #body="{ data }"> {{ data.height }} cm </template>
-      </Column>
-      <Column field="mass" header="Mass">
-        <template #body="{ data }"> {{ data.mass }} kg </template>
-      </Column>
+      <Column field="model" header="Model" />
+      <Column field="starship_class" header="Starship Class" />
     </DataTable>
   </DefaultLayout>
   <RouterLink to="/">
