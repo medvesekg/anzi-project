@@ -1,5 +1,5 @@
 <script setup>
-import axios from "axios";
+import axios from "@/plugins/axios";
 import { ref, watch } from "vue";
 import { Column, DataTable } from "primevue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
@@ -16,7 +16,7 @@ watch(page, loadCharacters, {
 function loadCharacters(page) {
   loading.value = true;
   axios
-    .get(`https://swapi.dev/api/people?page=${page}`)
+    .get(`people?page=${page}`)
     .then((response) => {
       characters.value = response?.data?.results || [];
       total.value = response?.data?.count || 0;

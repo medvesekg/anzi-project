@@ -15,6 +15,7 @@ This is a simple Vue 3 frontend that shows data from the Star Wars API (https://
 ## How to run
 
 - Clone this repository to your local machine
+- Copy .env.example to .env `cp .env.example .env`
 - Run `pnpm install`
 - Run `pnpm run dev`
 - Visit `localhost:5173`

@@ -1,7 +1,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { watch, ref } from "vue";
-import axios from "axios";
+import axios from "@/plugins/axios";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import CharacterDetails from "@/components/CharacterDetails.vue";
 
@@ -14,7 +14,7 @@ watch(() => route.params.id, loadCharacter, { immediate: true });
 function loadCharacter(id) {
   loading.value = true;
   axios
-    .get(`https://swapi.dev/api/people/${id}`)
+    .get(`people/${id}`)
     .then((response) => {
       character.value = response?.data || {};
     })

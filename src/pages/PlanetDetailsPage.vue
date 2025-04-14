@@ -1,7 +1,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { watch, ref } from "vue";
-import axios from "axios";
+import axios from "@/plugins/axios";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import PlanetDetails from "@/components/PlanetDetails.vue";
 
@@ -14,7 +14,7 @@ watch(() => route.params.id, loadPlanet, { immediate: true });
 function loadPlanet(id) {
   loading.value = true;
   axios
-    .get(`https://swapi.dev/api/planets/${id}`)
+    .get(`planets/${id}`)
     .then((response) => {
       planet.value = response?.data || {};
     })
