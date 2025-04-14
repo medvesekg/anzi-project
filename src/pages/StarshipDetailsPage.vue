@@ -1,7 +1,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { watch, ref } from "vue";
-import axios from "axios";
+import axios from "@/plugins/axios";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import StarshipDetails from "@/components/StarshipDetails.vue";
 
@@ -14,7 +14,7 @@ watch(() => route.params.id, loadStarship, { immediate: true });
 function loadStarship(id) {
   loading.value = true;
   axios
-    .get(`https://swapi.dev/api/starships/${id}`)
+    .get(`starships/${id}`)
     .then((response) => {
       starship.value = response?.data || {};
     })

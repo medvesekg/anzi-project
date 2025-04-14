@@ -1,6 +1,6 @@
 <script setup>
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import axios from "axios";
+import axios from "@/plugins/axios";
 import { ref, watch } from "vue";
 import { Column, DataTable } from "primevue";
 
@@ -14,7 +14,7 @@ watch(page, loadShips, { immediate: true });
 function loadShips(page) {
   loading.value = true;
   axios
-    .get(`https://swapi.dev/api/starships/?page=${page}`)
+    .get(`starships/?page=${page}`)
     .then((response) => {
       starships.value = response?.data?.results || [];
       total.value = response?.data?.count || 0;
